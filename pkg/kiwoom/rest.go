@@ -30,20 +30,18 @@ type Endpoint struct {
 var Endpoints = map[string]Endpoint{
 	// 접근토큰발급
 	"au10001": {
-		Url: "/oauth2/token",
-		ResultType: reflect.TypeOf(resAU10001{}),
+		Url:        "/oauth2/token",
+		ResultType: reflect.TypeFor[resAU10001](),
 	},
 	// 접근토큰폐기
 	"au10002": {
-		Url: "/oauth2/revoke",
-		ResultType: reflect.TypeOf(resAU10002{}),
+		Url:        "/oauth2/revoke",
+		ResultType: reflect.TypeFor[resAU10002](),
 	},
 	// 당일거래량상위요청
 	"ka10030 ": {
-		Url: "/api/dostk/rkinfo",
-		ResultType: reflect.TypeOf(struct {
-			TodayTradeQtyUpper []any `json:"tdy_trde_qty_upper"`
-		}{}),
+		Url:        "/api/dostk/rkinfo",
+		ResultType: reflect.TypeFor[resKA10030](),
 	},
 }
 

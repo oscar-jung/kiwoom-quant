@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/oscar-jung/kiwoom-quant/pkg/kiwoom"
@@ -20,4 +21,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	leaders, err := c.GetVolumeLeaders()
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(leaders)
 }

@@ -5,16 +5,11 @@ import (
 	"reflect"
 )
 
-type TokenResponse struct {
-	ExpiresDt string `json:"expires_dt"`
-	TokenType string `json:"token_type"`
-	Token     string `json:"token"`
-}
-
 func (c *Client) FetchToken() error {
-	res, err := c.CallEndpoint("au10001", nil, map[string]string{"grant_type": "client_credentials",
-		"appkey":    c.AppKey,
-		"secretkey": c.AppSecret,
+	res, err := c.CallEndpoint("au10001", nil, map[string]string{
+		"grant_type": "client_credentials",
+		"appkey":     c.AppKey,
+		"secretkey":  c.AppSecret,
 	})
 
 	if err != nil {
@@ -42,10 +37,11 @@ func (c *Client) FetchToken() error {
 }
 
 func (c *Client) RevokeToken() error {
-	res, err := c.CallEndpoint("au10002", nil, map[string]string{"grant_type": "client_credentials",
-		"appkey":    c.AppKey,
-		"secretkey": c.AppSecret,
-		"token":     c.AccessToken,
+	res, err := c.CallEndpoint("au10002", nil, map[string]string{
+		"grant_type": "client_credentials",
+		"appkey":     c.AppKey,
+		"secretkey":  c.AppSecret,
+		"token":      c.AccessToken,
 	})
 
 	if err != nil {
