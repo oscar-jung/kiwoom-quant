@@ -39,7 +39,7 @@ var Endpoints = map[string]Endpoint{
 		ResultType: reflect.TypeFor[resAU10002](),
 	},
 	// 당일거래량상위요청
-	"ka10030 ": {
+	"ka10030": {
 		Url:        "/api/dostk/rkinfo",
 		ResultType: reflect.TypeFor[resKA10030](),
 	},

@@ -14,6 +14,8 @@ type resAU10002 struct {
 }
 
 type resKA10030 struct {
+	ReturnCode    int    `json:"returnCode"`
+	ReturnMessage string `json:"returnMsg"`
 	TodayTradeQtyUpper []resTdyTrdeQtyUpper `json:"tdy_trde_qty_upper"`
 }
 

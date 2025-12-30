@@ -35,7 +35,7 @@ func (c *Client) GetVolumeLeaders() ([]string, error) {
 	}
 
 	leaders := []string{}
-	results := v.FieldByName("tdy_trde_qty_upper")
+	results := v.FieldByName("TodayTradeQtyUpper")
 	slice, ok := results.Interface().([]resTdyTrdeQtyUpper)
 	if !ok {
 		return nil, fmt.Errorf("failed to parse result list")
